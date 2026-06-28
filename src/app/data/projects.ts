@@ -17,7 +17,10 @@ const Projects = [
       "Terraform",
       "GraphQL",
     ],
-    link: "https://smartvatten.com/fi/kiinteistot/smartvatten-hub",
+    link: {
+      url: "https://smartvatten.com/fi/kiinteistot/smartvatten-hub",
+      text: "More information",
+    },
   },
   {
     title: "Linkedin to CV",
@@ -38,6 +41,17 @@ const Projects = [
       "shadcn/ui",
     ],
     githubUrl: "https://github.com/joonaskopsala/portfolio",
+  },
+  {
+    title: "Dota 2 Fearless Mode Ban tool",
+    description:
+      "A simple but functional tool for banning heroes across games in series in Dota 2's Fearless Mode. It's meant to be used as a stream overlay for tournaments.",
+    technologies: ["TypeScript", "React", "Next.js", "Material UI"],
+    githubUrl: "https://github.com/joonaskopsala/dota2-fearless",
+    link: {
+      url: "https://dota2-fearless.vercel.app/",
+      text: "Try it out!",
+    },
   },
 ];
 

@@ -9,6 +9,7 @@ import {
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 import { GithubIconIcon } from "./icons/logos-github-icon";
+import { ExternalLinkIcon } from "./icons/lucide-external-link";
 
 const ProjectCard = ({ project }: { project: Project }) => {
   return (
@@ -44,8 +45,13 @@ const ProjectCard = ({ project }: { project: Project }) => {
       {project.link && (
         <CardFooter>
           <Button variant="outline" size="sm" asChild>
-            <a href={project.link} target="_blank" rel="noopener noreferrer">
-              More information
+            <a
+              href={project.link.url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <ExternalLinkIcon size={16} className="mr-2" />
+              {project.link.text}
             </a>
           </Button>
         </CardFooter>

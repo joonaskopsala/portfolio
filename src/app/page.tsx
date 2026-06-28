@@ -9,11 +9,12 @@ import { Projects } from "./data/projects";
 import { Experiences } from "./data/experience";
 import ExperienceCard from "@/components/ExperienceCard";
 import { Skills } from "./data/skills";
+import settings from "@/settings.json";
 
 const HomePage = () => {
   return (
     <>
-      <Section>
+      <Section disableSeparator>
         <Container>
           <div className="max-w-3xl">
             <p className="text-sm font-medium text-muted-foreground">
@@ -45,14 +46,16 @@ const HomePage = () => {
               </Button>
             </div>
 
-            <div className="mt-8 flex items-center gap-2 text-sm text-muted-foreground">
-              <span className="h-2 w-2 rounded-full bg-green-500" />
-              Currently open for opportunities
-            </div>
+            {settings.openForOpportunities ? (
+              <div className="mt-8 flex items-center gap-2 text-sm text-muted-foreground">
+                <span className="h-2 w-2 rounded-full bg-green-500" />
+                Currently open for opportunities
+              </div>
+            ) : null}
           </div>
         </Container>
       </Section>
-      <Section className="border-t">
+      <Section>
         <Container>
           <div className="mb-12">
             <h2 className="text-3xl font-semibold tracking-tight">
@@ -64,7 +67,7 @@ const HomePage = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-2">
             {Projects.map((project) => (
               <ProjectCard key={project.title} project={project} />
             ))}
@@ -90,7 +93,7 @@ const HomePage = () => {
           </div>
         </Container>
       </Section>
-      <Section className="border-t">
+      <Section>
         <Container>
           <div className="max-w-3xl">
             <h2 className="text-3xl font-semibold tracking-tight">

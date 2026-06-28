@@ -9,8 +9,9 @@ import { ThemeProvider } from "@/app/providers/ThemeProvider";
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
-  title: "Joonas",
-  description: "Full stack developer",
+  title: "Joonas Kopsala | Full Stack Developer",
+  description:
+    "My web portfolio showcasing my projects, skills, and experience as a full stack developer.",
 };
 
 export default function RootLayout({
