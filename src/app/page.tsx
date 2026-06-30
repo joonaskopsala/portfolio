@@ -10,6 +10,7 @@ import { Experiences } from "./data/experience";
 import ExperienceCard from "@/components/ExperienceCard";
 import { Skills } from "./data/skills";
 import settings from "@/settings.json";
+import OpportunitySignal from "@/components/OpportunitySignal";
 
 const HomePage = () => {
   return (
@@ -35,23 +36,13 @@ const HomePage = () => {
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Button asChild size="lg">
-                <Link href="/projects">View Projects</Link>
-              </Button>
-
               <Button asChild variant="outline" size="lg">
                 <a href="/cv.pdf" target="_blank">
-                  Download CV
+                  Download Resume
                 </a>
               </Button>
             </div>
-
-            {settings.openForOpportunities ? (
-              <div className="mt-8 flex items-center gap-2 text-sm text-muted-foreground">
-                <span className="h-2 w-2 rounded-full bg-green-500" />
-                Currently open for opportunities
-              </div>
-            ) : null}
+            {settings.openForOpportunities && <OpportunitySignal />}
           </div>
         </Container>
       </Section>

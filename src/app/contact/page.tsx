@@ -5,6 +5,7 @@ import Section from "@/components/Section";
 import { ArrowUpRightIcon, MailIcon } from "lucide-react";
 import settings from "@/settings.json";
 import PageTitle from "@/components/PageTitle";
+import OpportunitySignal from "@/components/OpportunitySignal";
 
 const contactLinks = [
   {
@@ -39,12 +40,7 @@ const ContactPage = () => {
             you to connect with me on LinkedIn.
           </p>
 
-          {settings.openForOpportunities ? (
-            <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-green-500/20 bg-green-500/10 px-3 py-1 text-xs font-medium text-green-600 dark:text-green-400">
-              <span className="h-1.5 w-1.5 rounded-full bg-green-500" />
-              Currently open for opportunities
-            </div>
-          ) : null}
+          {settings.openForOpportunities && <OpportunitySignal />}
 
           <div className="mt-8 flex flex-col gap-3">
             {contactLinks.map(({ icon, label, value, href }) => (
